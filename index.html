@@ -1,175 +1,295 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Logesse Tech - Maintenance Informatique</title>
+<title>Logesse Tech | Maintenance Informatique</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+  scroll-behavior:smooth;
+}
 
-    body {
-      background: #0b0b0b;
-      color: white;
-      line-height: 1.6;
-    }
+body{
+  background:#080808;
+  color:white;
+}
 
-    header {
-      background: #111;
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #333;
-    }
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#0d0d0d;
+  border-bottom:1px solid #222;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: white;
-    }
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
 
-    .logo span {
-      color: #00bfff;
-    }
+.logo span{
+  color:#00bfff;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 15px;
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-size:14px;
+}
 
-    nav a:hover {
-      color: #00bfff;
-    }
+nav a:hover{
+  color:#00bfff;
+}
 
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      padding: 60px 8%;
-      background: linear-gradient(135deg, #080808, #151515);
-    }
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  padding:70px 8%;
+  background:
+    radial-gradient(circle at 80% 30%, #00334d 0%, transparent 35%),
+    linear-gradient(135deg,#050505,#111);
+}
 
-    .hero-text {
-      max-width: 700px;
-    }
+.hero-content{
+  max-width:750px;
+}
 
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
+.badge{
+  display:inline-block;
+  padding:8px 15px;
+  border:1px solid #00bfff;
+  border-radius:30px;
+  color:#00bfff;
+  margin-bottom:20px;
+  font-size:13px;
+}
 
-    .hero h1 span {
-      color: #00bfff;
-    }
+.hero h1{
+  font-size:52px;
+  line-height:1.1;
+  margin-bottom:20px;
+}
 
-    .hero p {
-      color: #ccc;
-      font-size: 19px;
-      margin-bottom: 30px;
-    }
+.hero h1 span{
+  color:#00bfff;
+}
 
-    .btn {
-      display: inline-block;
-      background: #00bfff;
-      color: #000;
-      padding: 14px 25px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-right: 10px;
-    }
+.hero p{
+  color:#bbb;
+  font-size:18px;
+  max-width:650px;
+  margin-bottom:30px;
+}
 
-    .btn:hover {
-      background: white;
-    }
+.buttons a{
+  display:inline-block;
+  padding:14px 24px;
+  margin-right:10px;
+  margin-bottom:10px;
+  border-radius:7px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    section {
-      padding: 70px 8%;
-    }
+.btn-primary{
+  background:#00bfff;
+  color:#000;
+}
 
-    .title {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 45px;
-    }
+.btn-secondary{
+  border:1px solid #00bfff;
+  color:white;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
+.btn-primary:hover{
+  background:white;
+}
 
-    .card {
-      background: #151515;
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid #292929;
-      text-align: center;
-    }
+.btn-secondary:hover{
+  background:#00bfff;
+  color:#000;
+}
 
-    .card h3 {
-      color: #00bfff;
-      margin-bottom: 15px;
-    }
+/* SECTIONS */
+section{
+  padding:80px 8%;
+}
 
-    .card p {
-      color: #bbb;
-    }
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
 
-    .about {
-      background: #111;
-      text-align: center;
-    }
+.section-title h2{
+  font-size:34px;
+}
 
-    .about p {
-      max-width: 800px;
-      margin: auto;
-      color: #ccc;
-      font-size: 17px;
-    }
+.section-title p{
+  color:#888;
+  margin-top:10px;
+}
 
-    .contact {
-      text-align: center;
-    }
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
 
-    .contact p {
-      margin-bottom: 20px;
-      color: #ccc;
-    }
+.card{
+  background:#111;
+  border:1px solid #222;
+  padding:30px;
+  border-radius:12px;
+  transition:.3s;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #050505;
-      color: #777;
-      border-top: 1px solid #222;
-    }
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#00bfff;
+}
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 35px;
-      }
+.icon{
+  font-size:35px;
+  margin-bottom:15px;
+}
 
-      nav {
-        display: none;
-      }
-    }
-  </style>
+.card h3{
+  color:#00bfff;
+  margin-bottom:12px;
+}
+
+.card p{
+  color:#aaa;
+}
+
+/* ABOUT */
+.about{
+  background:#101010;
+}
+
+.about-content{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+}
+
+.about-content p{
+  color:#bbb;
+  font-size:17px;
+  line-height:1.8;
+}
+
+/* WHY */
+.why{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.why-box{
+  background:#111;
+  padding:25px;
+  text-align:center;
+  border-radius:10px;
+  border:1px solid #222;
+}
+
+.why-box strong{
+  display:block;
+  font-size:18px;
+  margin-top:10px;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+  background:
+    linear-gradient(135deg,#001923,#080808);
+}
+
+.contact p{
+  color:#bbb;
+  margin:15px auto 25px;
+}
+
+.contact-buttons a{
+  display:inline-block;
+  margin:5px;
+  padding:14px 25px;
+  border-radius:7px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.whatsapp{
+  background:#25D366;
+  color:#000;
+}
+
+.call{
+  background:#00bfff;
+  color:#000;
+}
+
+/* FOOTER */
+footer{
+  background:#050505;
+  text-align:center;
+  padding:25px;
+  color:#777;
+  border-top:1px solid #222;
+}
+
+footer span{
+  color:#00bfff;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+  nav{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  section{
+    padding:60px 6%;
+  }
+}
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-  <div class="logo">LOGESSE <span>TECH</span></div>
+
+  <div class="logo">
+    LOGESSE <span>TECH</span>
+  </div>
 
   <nav>
     <a href="#accueil">Accueil</a>
@@ -177,86 +297,213 @@
     <a href="#apropos">À propos</a>
     <a href="#contact">Contact</a>
   </nav>
+
 </header>
 
+
+<!-- ACCUEIL -->
 <section class="hero" id="accueil">
-  <div class="hero-text">
-    <h1>Votre informatique,<br><span>notre expertise.</span></h1>
+
+  <div class="hero-content">
+
+    <div class="badge">
+      ⚡ MAINTENANCE INFORMATIQUE
+    </div>
+
+    <h1>
+      Votre informatique.<br>
+      <span>Notre expertise.</span>
+    </h1>
 
     <p>
-      Maintenance informatique, dépannage, installation et assistance
-      pour particuliers et entreprises.
+      Logesse Tech vous accompagne pour la maintenance,
+      le dépannage, l'installation et la configuration
+      de vos équipements informatiques et réseaux.
     </p>
 
-    <a class="btn" href="#services">Nos services</a>
+    <div class="buttons">
 
-    <a class="btn" href="https://wa.me/2290191354730">
-      WhatsApp
-    </a>
+      <a href="#services" class="btn-primary">
+        Découvrir nos services
+      </a>
+
+      <a href="https://wa.me/2290191354730"
+         class="btn-secondary">
+        💬 WhatsApp
+      </a>
+
+    </div>
+
   </div>
+
 </section>
 
+
+<!-- SERVICES -->
 <section id="services">
-  <h2 class="title">Nos services</h2>
+
+  <div class="section-title">
+    <h2>Nos services</h2>
+    <p>Des solutions adaptées à vos besoins</p>
+  </div>
 
   <div class="services">
 
     <div class="card">
-      <h3>💻 Maintenance</h3>
+      <div class="icon">💻</div>
+      <h3>Maintenance informatique</h3>
       <p>
-        Diagnostic, réparation et entretien de vos ordinateurs.
+        Diagnostic, réparation, entretien et optimisation
+        de vos ordinateurs.
       </p>
     </div>
 
     <div class="card">
-      <h3>🌐 Réseaux</h3>
+      <div class="icon">🌐</div>
+      <h3>Réseaux</h3>
       <p>
-        Installation et configuration des réseaux informatiques.
+        Installation et configuration de réseaux
+        informatiques et connexions.
       </p>
     </div>
 
     <div class="card">
-      <h3>🖥️ Installation</h3>
+      <div class="icon">🖨️</div>
+      <h3>Imprimantes</h3>
       <p>
-        Installation de Windows, logiciels, imprimantes et périphériques.
+        Installation, configuration et dépannage
+        de vos imprimantes.
       </p>
     </div>
 
     <div class="card">
-      <h3>🛠️ Assistance</h3>
+      <div class="icon">⚙️</div>
+      <h3>Installation logiciels</h3>
       <p>
-        Assistance informatique et résolution de problèmes techniques.
+        Installation de Windows, logiciels et
+        configuration de vos équipements.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛠️</div>
+      <h3>Assistance</h3>
+      <p>
+        Assistance informatique et résolution
+        de problèmes techniques.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔧</div>
+      <h3>Dépannage</h3>
+      <p>
+        Intervention pour identifier et résoudre
+        les pannes informatiques.
       </p>
     </div>
 
   </div>
+
 </section>
 
+
+<!-- A PROPOS -->
 <section class="about" id="apropos">
-  <h2 class="title">À propos de Logesse Tech</h2>
 
-  <p>
-    Logesse Tech vous accompagne dans la maintenance et la gestion
-    de vos équipements informatiques. Notre objectif est de vous
-    proposer des solutions simples, rapides et efficaces.
-  </p>
+  <div class="section-title">
+    <h2>À propos de Logesse Tech</h2>
+  </div>
+
+  <div class="about-content">
+
+    <p>
+      Je suis <strong>Logesse Dior Junior</strong>,
+      technicien en informatique basé à Bohicon, au Bénin.
+      À travers Logesse Tech, je propose des services de
+      maintenance informatique, de dépannage et
+      d'assistance technique.
+    </p>
+
+  </div>
+
 </section>
 
+
+<!-- POURQUOI NOUS -->
+<section>
+
+  <div class="section-title">
+    <h2>Pourquoi choisir Logesse Tech ?</h2>
+    <p>Un service sérieux et orienté vers les résultats</p>
+  </div>
+
+  <div class="why">
+
+    <div class="why-box">
+      ⚡
+      <strong>Rapidité</strong>
+      Intervention efficace.
+    </div>
+
+    <div class="why-box">
+      🛡️
+      <strong>Fiabilité</strong>
+      Des solutions adaptées.
+    </div>
+
+    <div class="why-box">
+      💡
+      <strong>Expertise</strong>
+      Des solutions techniques.
+    </div>
+
+    <div class="why-box">
+      🤝
+      <strong>Confiance</strong>
+      Un accompagnement sérieux.
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
 <section class="contact" id="contact">
-  <h2 class="title">Contactez-nous</h2>
 
-  <p>
-    Besoin d'une intervention informatique ?
-  </p>
+  <div class="section-title">
+    <h2>Besoin d'une intervention ?</h2>
 
-  <a class="btn" href="https://wa.me/2290191354730">
-    Contacter sur WhatsApp
-  </a>
+    <p>
+      Contactez Logesse Tech directement.
+    </p>
+  </div>
+
+  <div class="contact-buttons">
+
+    <a href="https://wa.me/2290191354730"
+       class="whatsapp">
+      💬 WhatsApp
+    </a>
+
+    <a href="tel:+2290191354730"
+       class="call">
+      📞 Appeler
+    </a>
+
+  </div>
+
 </section>
 
+
+<!-- FOOTER -->
 <footer>
-  © 2026 Logesse Tech — Maintenance informatique
+
+  © 2026 <span>Logesse Tech</span> —
+  Maintenance informatique
+
 </footer>
 
 </body>
-      </html>
+  </html>
