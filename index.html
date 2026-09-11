@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Logesse Tech - Maintenance Informatique</title>
 
   <style>
@@ -14,119 +15,152 @@
     }
 
     body {
-      background: #f4f4f4;
-      color: #222;
+      background: #0b0b0b;
+      color: white;
+      line-height: 1.6;
     }
 
     header {
       background: #111;
-      color: white;
-      padding: 25px 8%;
+      padding: 20px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid #333;
     }
 
-    header h1 {
-      font-size: 28px;
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: white;
     }
 
-    header span {
-      color: #00aaff;
+    .logo span {
+      color: #00bfff;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 20px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #00bfff;
     }
 
     .hero {
-      background: #151515;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 8%;
+      background: linear-gradient(135deg, #080808, #151515);
     }
 
-    .hero h2 {
-      font-size: 42px;
+    .hero-text {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
       margin-bottom: 20px;
     }
 
+    .hero h1 span {
+      color: #00bfff;
+    }
+
     .hero p {
+      color: #ccc;
       font-size: 19px;
       margin-bottom: 30px;
     }
 
     .btn {
       display: inline-block;
-      background: #00aaff;
-      color: white;
+      background: #00bfff;
+      color: #000;
       padding: 14px 25px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .btn:hover {
+      background: white;
     }
 
     section {
-      padding: 60px 8%;
-      text-align: center;
+      padding: 70px 8%;
     }
 
-    section h2 {
-      margin-bottom: 35px;
-      font-size: 30px;
+    .title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 45px;
     }
 
     .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
     }
 
     .card {
-      background: white;
-      width: 280px;
-      padding: 30px 20px;
+      background: #151515;
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      border: 1px solid #292929;
+      text-align: center;
     }
 
     .card h3 {
+      color: #00bfff;
       margin-bottom: 15px;
-      color: #0088cc;
+    }
+
+    .card p {
+      color: #bbb;
+    }
+
+    .about {
+      background: #111;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      color: #ccc;
+      font-size: 17px;
     }
 
     .contact {
-      background: #111;
-      color: white;
+      text-align: center;
     }
 
     .contact p {
-      margin: 12px 0;
-      font-size: 18px;
+      margin-bottom: 20px;
+      color: #ccc;
     }
 
     footer {
-      background: #000;
-      color: white;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
+      background: #050505;
+      color: #777;
+      border-top: 1px solid #222;
     }
 
-    @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 35px;
       }
 
-      nav a {
-        margin: 0 8px;
-      }
-
-      .hero h2 {
-        font-size: 32px;
+      nav {
+        display: none;
       }
     }
   </style>
@@ -134,67 +168,95 @@
 
 <body>
 
-  <header>
-    <h1>Logesse <span>Tech</span></h1>
+<header>
+  <div class="logo">LOGESSE <span>TECH</span></div>
 
-    <nav>
-      <a href="#accueil">Accueil</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#services">Services</a>
+    <a href="#apropos">À propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section class="hero" id="accueil">
-    <h2>Votre solution informatique</h2>
-    <p>Maintenance informatique • Assistance • Réseaux • Installation</p>
-    <a class="btn" href="https://wa.me/2290191354730">Nous contacter sur WhatsApp</a>
-  </section>
+<section class="hero" id="accueil">
+  <div class="hero-text">
+    <h1>Votre informatique,<br><span>notre expertise.</span></h1>
 
-  <section id="services">
-    <h2>Nos services</h2>
+    <p>
+      Maintenance informatique, dépannage, installation et assistance
+      pour particuliers et entreprises.
+    </p>
 
-    <div class="services">
-
-      <div class="card">
-        <h3>Maintenance informatique</h3>
-        <p>Diagnostic, réparation et entretien de vos ordinateurs.</p>
-      </div>
-
-      <div class="card">
-        <h3>Installation</h3>
-        <p>Installation de Windows, logiciels, imprimantes et périphériques.</p>
-      </div>
-
-      <div class="card">
-        <h3>Réseaux</h3>
-        <p>Installation et configuration de réseaux informatiques et Wi-Fi.</p>
-      </div>
-
-      <div class="card">
-        <h3>Assistance</h3>
-        <p>Assistance informatique pour particuliers et entreprises.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <h2>Contactez-nous</h2>
-
-    <p>📞 Téléphone : 01 91 35 47 30</p>
-    <p>📱 WhatsApp : 01 91 35 47 30</p>
-    <p>📍 Bohicon, Bénin</p>
-
-    <br>
+    <a class="btn" href="#services">Nos services</a>
 
     <a class="btn" href="https://wa.me/2290191354730">
-      Écrire sur WhatsApp
+      WhatsApp
     </a>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2026 Logesse Tech - Tous droits réservés.</p>
-  </footer>
+<section id="services">
+  <h2 class="title">Nos services</h2>
+
+  <div class="services">
+
+    <div class="card">
+      <h3>💻 Maintenance</h3>
+      <p>
+        Diagnostic, réparation et entretien de vos ordinateurs.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🌐 Réseaux</h3>
+      <p>
+        Installation et configuration des réseaux informatiques.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🖥️ Installation</h3>
+      <p>
+        Installation de Windows, logiciels, imprimantes et périphériques.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🛠️ Assistance</h3>
+      <p>
+        Assistance informatique et résolution de problèmes techniques.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="about" id="apropos">
+  <h2 class="title">À propos de Logesse Tech</h2>
+
+  <p>
+    Logesse Tech vous accompagne dans la maintenance et la gestion
+    de vos équipements informatiques. Notre objectif est de vous
+    proposer des solutions simples, rapides et efficaces.
+  </p>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="title">Contactez-nous</h2>
+
+  <p>
+    Besoin d'une intervention informatique ?
+  </p>
+
+  <a class="btn" href="https://wa.me/2290191354730">
+    Contacter sur WhatsApp
+  </a>
+</section>
+
+<footer>
+  © 2026 Logesse Tech — Maintenance informatique
+</footer>
 
 </body>
-  </html>
+      </html>
